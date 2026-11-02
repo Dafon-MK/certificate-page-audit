@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>官網證書頁查核結果｜2026/11/02</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bottle: #0f3d2e;
+  --bottle-soft: #1a5340;
+  --paper: #fbfcfa;
+  --ink: #16231d;
+  --muted: #55645c;
+  --line: #d5ddd7;
+  --green: #127a45;
+  --amber: #a85f00;
+  --red: #c4162f;
+  --red-tint: #fdecee;
+  --serif: "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+  --sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.75 var(--sans); }
+img { display: block; max-width: 100%; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid #f5c542; outline-offset: 3px; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+
+.hero { background: var(--bottle); color: #fff; padding: 64px 0 56px; }
+.hero h1 { font: 900 clamp(2.1rem, 5vw, 3.5rem)/1.25 var(--serif); margin: 0; letter-spacing: .01em; }
+.hero p { max-width: 42em; margin: 18px 0 0; color: #d7e6dd; }
+.hero a { color: #fff; }
+
+.wall { list-style: none; margin: 44px 0 0; padding: 0; display: grid; grid-template-columns: repeat(7, 1fr); gap: 26px 18px; }
+.tile { display: block; text-decoration: none; }
+.sheet { position: relative; aspect-ratio: 5 / 7; background: #fff; overflow: hidden; transition: transform .15s; }
+.tile:hover .sheet { transform: translateY(-3px); }
+.sheet img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.tile.ok .sheet img { opacity: .72; }
+.stamp {
+  position: absolute; left: 50%; top: 50%;
+  padding: .12em .5em; white-space: nowrap;
+  font: 900 1.02rem/1.35 var(--serif);
+  border: 3px double currentColor; border-radius: 6px; background: rgba(255,255,255,.9);
+  transform: translate(-50%, -50%) rotate(-9deg);
+}
+.stamp.green { color: var(--green); }
+.stamp.amber { color: var(--amber); }
+.stamp.red { color: var(--red); }
+.tile span.name { display: block; margin-top: 9px; font-size: .84rem; line-height: 1.45; color: #e6f0ea; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .stamp { animation: thump .28s cubic-bezier(.2, 1.4, .4, 1) both; animation-delay: calc(var(--i) * 70ms + 250ms); }
+  @keyframes thump {
+    from { opacity: 0; transform: translate(-50%, -50%) rotate(-9deg) scale(2.2); }
+    to { opacity: 1; transform: translate(-50%, -50%) rotate(-9deg) scale(1); }
+  }
+}
+
+main section { padding: 60px 0 0; }
+h2 { font: 700 1.85rem/1.35 var(--serif); margin: 0 0 8px; }
+.lead { margin: 0 0 30px; max-width: 42em; color: var(--muted); }
+h3 { font: 700 1.25rem/1.4 var(--sans); margin: 0 0 6px; }
+
+.alert { background: var(--red-tint); border-left: 8px solid var(--red); padding: 26px 30px; display: grid; grid-template-columns: 170px 1fr; gap: 28px; align-items: start; }
+.alert h2 { color: var(--red); }
+.alert p { margin: 0; max-width: 40em; }
+.alert img { border: 1px solid var(--line); }
+
+.fix { display: grid; grid-template-columns: 340px 1fr; gap: 36px; padding: 32px 0; border-top: 1px solid var(--line); }
+.compare { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; align-self: start; }
+.compare figure { margin: 0; }
+.compare img { border: 1px solid var(--line); aspect-ratio: 5 / 7; object-fit: cover; object-position: top; width: 100%; }
+.compare figcaption { font-size: .82rem; line-height: 1.45; margin-top: 6px; color: var(--muted); }
+.compare figcaption b { display: block; color: var(--ink); }
+.compare .empty { aspect-ratio: 5 / 7; border: 2px dashed var(--line); display: grid; place-items: center; text-align: center; padding: 10px; font-size: .86rem; color: var(--muted); }
+.fix p { margin: 0 0 10px; max-width: 38em; }
+.fix ul { margin: 0; padding-left: 1.2em; max-width: 38em; }
+.fix li { margin-bottom: 6px; }
+.tag { font-weight: 700; color: var(--red); }
+code { font: .86em Consolas, "Courier New", monospace; background: #edf1ee; padding: .1em .35em; word-break: break-all; }
+
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; vertical-align: top; padding: 11px 16px 11px 0; border-bottom: 1px solid var(--line); }
+th { font-size: .88rem; font-weight: 700; color: var(--muted); }
+td.state { font-weight: 700; white-space: nowrap; }
+td.state.red { color: var(--red); }
+td.state.amber { color: var(--amber); }
+td.state.green { color: var(--green); }
+
+.notes { margin: 0; padding-left: 1.2em; max-width: 42em; }
+.notes li { margin-bottom: 8px; }
+footer { margin-top: 70px; padding: 30px 0 44px; background: #eef2ef; color: var(--muted); font-size: .92rem; }
+footer p { margin: 0 0 8px; max-width: 46em; }
+
+@media (max-width: 920px) {
+  .wall { grid-template-columns: repeat(4, 1fr); }
+  .fix { grid-template-columns: 1fr; gap: 18px; }
+  .compare { max-width: 340px; }
+}
+@media (max-width: 560px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 18px; }
+  .hero { padding: 42px 0 40px; }
+  .wall { grid-template-columns: repeat(3, 1fr); gap: 20px 12px; }
+  .stamp { font-size: .88rem; }
+  .alert { grid-template-columns: 1fr; padding: 22px; }
+  .alert img { max-width: 170px; }
+  th, td { padding-right: 10px; }
+  .hide-sm { display: none; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>官網證書頁 14 個位置，<br>10 個要處理</h1>
+    <p>這是 2026/11/02 對<a href="https://www.df-recycle.com/certificate">官網「專業認證」頁</a>的逐張查核。5 個內容有誤，4 個過期或快到期，1 張含個資，只有 4 個完全不用動。點任何一張可看處理方式。</p>
+    <ol class="wall">
+      <li><a class="tile ok" href="#ok"><span class="sheet"><img src="img/iso9001.jpg" alt="ISO 9001 證書"><span class="stamp green" style="--i:0">正確</span></span><span class="name">ISO 9001:2015</span></a></li>
+      <li><a class="tile ok" href="#ok"><span class="sheet"><img src="img/iso14001.jpg" alt="ISO 14001 證書"><span class="stamp green" style="--i:1">正確</span></span><span class="name">ISO 14001:2015</span></a></li>
+      <li><a class="tile ok" href="#ok"><span class="sheet"><img src="img/iso45001.jpg" alt="ISO 45001 證書"><span class="stamp green" style="--i:2">正確</span></span><span class="name">ISO 45001:2018</span></a></li>
+      <li><a class="tile" href="#expiry"><span class="sheet"><img src="img/ares14067.jpg" alt="ARES ISO 14067 查證聲明"><span class="stamp amber" style="--i:3">快到期</span></span><span class="name">ISO 14067:2018</span></a></li>
+      <li><a class="tile ok" href="#ok"><span class="sheet"><img src="img/iso27001.jpg" alt="ISO 27001 證書"><span class="stamp green" style="--i:4">正確</span></span><span class="name">ISO 27001:2022</span></a></li>
+      <li><a class="tile" href="#privacy"><span class="sheet"><img src="img/permit-masked.jpg" alt="甲級廢棄物清除許可證，個資已遮蔽"><span class="stamp red" style="--i:5">含個資</span></span><span class="name">甲級廢棄物清除許可證</span></a></li>
+      <li><a class="tile" href="#fix-nol"><span class="sheet"><img src="img/eucertplast.jpg" alt="實際顯示的 EuCertPlast 證書"><span class="stamp red" style="--i:6">放錯</span></span><span class="name">FDA NOL 認證</span></a></li>
+      <li><a class="tile" href="#expiry"><span class="sheet"><img src="img/grs.jpg" alt="GRS 證書"><span class="stamp amber" style="--i:7">已過期</span></span><span class="name">GRS 全球回收標準</span></a></li>
+      <li><a class="tile" href="#fix-carbon"><span class="sheet"><img src="img/tuv14067.jpg" alt="實際顯示的 TÜV Rheinland ISO 14067 證書"><span class="stamp red" style="--i:8">無佐證</span></span><span class="name">再生料減碳75%認證</span></a></li>
+      <li><a class="tile" href="#fix-rcs"><span class="sheet"><img src="img/rohs.jpg" alt="實際顯示的 RoHS 測試報告"><span class="stamp red" style="--i:9">放錯</span></span><span class="name">RCS 回收含量標準</span></a></li>
+      <li><a class="tile" href="#expiry"><span class="sheet"><img src="img/ares14067.jpg" alt="ARES ISO 14067 查證聲明"><span class="stamp amber" style="--i:10">快到期</span></span><span class="name">ISO 14067:2018（碳足跡區）</span></a></li>
+      <li><a class="tile" href="#fix-cfr"><span class="sheet"><img src="img/report-fda.jpg" alt="CFR FDA 測試報告縮圖"><span class="stamp red" style="--i:11">大圖放錯</span></span><span class="name">CFR FDA 測試報告</span></a></li>
+      <li><a class="tile" href="#fix-eu"><span class="sheet"><img src="img/report-eu.jpg" alt="EU No. 10 測試報告縮圖"><span class="stamp red" style="--i:12">大圖放錯</span></span><span class="name">EU No. 10 測試報告</span></a></li>
+      <li><a class="tile" href="#expiry"><span class="sheet"><img src="img/sedex.jpg" alt="Sedex 會員證書"><span class="stamp amber" style="--i:13">已過期</span></span><span class="name">Sedex 高級供應商會員</span></a></li>
+    </ol>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section id="privacy">
+    <div class="alert">
+      <img src="img/permit-masked.jpg" alt="甲級廢棄物清除許可證，負責人個資已遮蔽">
+      <div>
+        <h2>最先處理：許可證公開了個資</h2>
+        <p>官網上的甲級廢棄物清除許可證，清楚顯示負責人的身分證字號和住家地址，任何人都能看到。圖中的深色色塊是這一頁為了保護個資加上的，官網上的原圖沒有遮蔽。</p>
+        <p style="margin-top:10px"><strong>怎麼改：</strong>遮蔽後重新上傳縮圖和大圖，並刪除伺服器上的舊檔 <code>certificate_pic04.jpg</code>、<code>certificate_pic04_b.jpg</code>。許可證內容本身正確，有效至 116/06/22。</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>5 個內容有誤</h2>
+    <p class="lead">有些是文件放錯，有些是縮圖正確但點開的大圖不對。訪客點開才會看到問題，所以大圖也要逐張確認。</p>
+
+    <article class="fix" id="fix-nol">
+      <div class="compare">
+        <figure><img src="img/eucertplast.jpg" alt="目前顯示的 EuCertPlast 證書"><figcaption><b>現在顯示</b>EuCertPlast，2023/10/16 已過期</figcaption></figure>
+        <figure><img src="img/nol-hdpe.jpg" alt="FDA 給大豐的 HDPE 不反對函"><figcaption><b>應改為</b>FDA 函（HDPE 與 PP 各一份）</figcaption></figure>
+      </div>
+      <div>
+        <h3>FDA NOL 認證</h3>
+        <p><span class="tag">問題：</span>放的是 EuCertPlast 證書，不是 FDA 文件，而且已過期。</p>
+        <ul>
+          <li>換成 <code>certificate_pic14_b.jpg</code>（HDPE，PNC 2877）和 <code>certificate_pic15_b.jpg</code>（PP，PNC 2840），兩張都已在網站伺服器上。</li>
+          <li>PP 函的圖片看不到簽名，請改用有簽名的版本。</li>
+          <li>說明改為「FDA NOL 不反對函（HDPE／PP）」。NOL 不是認證，函中適用範圍僅限乾性食品（Food Type VIII、COU E–G）。</li>
+          <li>EuCertPlast 若有新證可另立一項，沒有就下架。</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fix" id="fix-carbon">
+      <div class="compare">
+        <figure><img src="img/tuv14067.jpg" alt="目前顯示的 TÜV Rheinland ISO 14067 證書"><figcaption><b>現在顯示</b>TÜV Rheinland ISO 14067，2023/11/30 已過期</figcaption></figure>
+        <figure><div class="empty">需要有效證書和數據頁</div><figcaption><b>應改為</b>有效的再生料碳足跡證書</figcaption></figure>
+      </div>
+      <div>
+        <h3>再生料(HDPE/PP)減碳75%認證</h3>
+        <p><span class="tag">問題：</span>證書首頁沒有 75% 這個數字，附件也沒放上網。證書還載明「查證不包含對外溝通內容的審查」，所以不能直接支持「減碳75%」的宣稱。</p>
+        <ul>
+          <li>換成有效的再生料 ISO 14067 證書並附數據頁，沒有就下架。</li>
+          <li>名稱改為「再生料(HDPE/PP) ISO 14067 碳足跡查證」，並移到「碳足跡認證」區。</li>
+          <li>現有的 ARES 文件標的是廢棄物清運服務，不能拿來替代。</li>
+          <li>官網其他地方若也寫了「減碳75%」，建議一起檢查。</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fix" id="fix-rcs">
+      <div class="compare">
+        <figure><img src="img/rohs.jpg" alt="目前顯示的 RoHS 測試報告"><figcaption><b>現在顯示</b>縮圖是 RoHS 報告，大圖是 N610HF 測試報告</figcaption></figure>
+        <figure><div class="empty">網站上找不到 RCS 證書檔</div><figcaption><b>應改為</b>RCS 證書</figcaption></figure>
+      </div>
+      <div>
+        <h3>RCS 回收含量標準</h3>
+        <p><span class="tag">問題：</span>縮圖和大圖都不是 RCS 證書，而且彼此也不是同一份文件。</p>
+        <ul>
+          <li>向承辦單位索取有效的 RCS 證書後換上，沒有就先下架這一項。</li>
+          <li>網站上試過 pic01 到 pic25 的檔名，都沒有 RCS 證書。</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="fix" id="fix-cfr">
+      <div class="compare">
+        <figure><img src="img/svhc.jpg" alt="目前點開看到的 SVHC 報告"><figcaption><b>點開現在顯示</b>SVHC／REACH 報告（PP）</figcaption></figure>
+        <figure><img src="img/report-fda.jpg" alt="正確的 FDA 測試報告"><figcaption><b>應改為</b>TWNC01159724，21 CFR 177.1520，Pass</figcaption></figure>
+      </div>
+      <div>
+        <h3>CFR FDA 測試報告</h3>
+        <p><span class="tag">問題：</span>縮圖正確，但點開的大圖是另一份 SVHC 報告。</p>
+        <ul><li>大圖改連 <code>certificate_pic18_b.jpg</code>，這份才和縮圖一致。</li></ul>
+      </div>
+    </article>
+
+    <article class="fix" id="fix-eu">
+      <div class="compare">
+        <figure><img src="img/rohs.jpg" alt="目前點開看到的 RoHS 報告"><figcaption><b>點開現在顯示</b>RoHS 報告（PP）</figcaption></figure>
+        <figure><img src="img/report-eu.jpg" alt="與縮圖一致的測試報告"><figcaption><b>應改為</b>TWNC01156437（PE N610HF）</figcaption></figure>
+      </div>
+      <div>
+        <h3>EU No. 10 測試報告</h3>
+        <p><span class="tag">問題：</span>點開的大圖是 RoHS 報告，和縮圖不同。正確的那份首頁只寫「請見第二頁」，目前無法確認內容確實是 EU 10/2011。</p>
+        <ul>
+          <li>大圖改連 <code>certificate_pic19_b.jpg</code>。</li>
+          <li>請查原始報告第二頁確認標準；確認後把符合結論的那一頁也放上。</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="expiry">
+    <h2>過期與快到期</h2>
+    <p class="lead">到期日以網站上的圖片為準。公司可能已經續證、只是網站沒更新，所以先確認手上有沒有新版：有新證就換，未續證就下架或標註。</p>
+    <table>
+      <thead><tr><th>文件</th><th>到期日</th><th>狀態</th><th class="hide-sm">怎麼改</th></tr></thead>
+      <tbody>
+        <tr><td>GRS 全球回收標準</td><td>2026/08/24</td><td class="state red">過期 70 天</td><td class="hide-sm">有新證就換，未續證就下架或標註</td></tr>
+        <tr><td>Sedex 高級供應商會員</td><td>2026/09</td><td class="state red">已過期</td><td class="hide-sm">有新證就換，未續證就下架或標註</td></tr>
+        <tr><td>ISO 14067:2018（ARES，頁面出現兩次）</td><td>2026/12/25</td><td class="state amber">剩 53 天</td><td class="hide-sm">換證時兩處要一起更新</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="ok">
+    <h2>不用改的項目</h2>
+    <p class="lead">圖片與說明相符，也都在有效期內。</p>
+    <table>
+      <thead><tr><th>說明</th><th>發證單位</th><th>有效至</th></tr></thead>
+      <tbody>
+        <tr><td>ISO 9001:2015 品質管理系統</td><td>TÜV NORD</td><td>2029/02/25</td></tr>
+        <tr><td>ISO 14001:2015 環境管理系統</td><td>TÜV NORD</td><td>2029/04/15</td></tr>
+        <tr><td>ISO 45001:2018 職安衛生管理系統</td><td>TÜV NORD</td><td>2029/02/20</td></tr>
+        <tr><td>ISO 27001:2022 資訊安全管理系統</td><td>ARES</td><td>2028/09/08</td></tr>
+      </tbody>
+    </table>
+    <p class="lead" style="margin-top:18px">可順手調整的用字：「ISO 27001」可寫成「ISO/IEC 27001」，「職安衛生」可寫成「職業安全衛生」。</p>
+  </section>
+
+  <section>
+    <h2>還要找人確認</h2>
+    <ul class="notes">
+      <li>GRS、Sedex、EuCertPlast、再生料碳足跡證書是否已續證，新版檔案在誰手上。</li>
+      <li>公司是否持有有效的 RCS 證書。</li>
+      <li>TWNC01156437 報告第二頁的標準是否為 EU 10/2011。</li>
+      <li>「減碳75%」的數據來源，以及目前能否繼續對外使用。</li>
+      <li>ISO 27001 證書要求每 12 個月內完成監督稽核，並取得 ARES 通知；請確認 2026 年已完成。</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>查核範圍：2026/11/02 官網頁面上顯示的縮圖與點開後的大圖。只核對圖片內容，沒有到各發證機構的資料庫查證。</p>
+    <p>測試報告本身沒有標示效期，所以未列入過期判斷。</p>
+  </div>
+</footer>
+
+</body>
+</html>
