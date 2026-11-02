@@ -84,6 +84,8 @@ h3 { font: 700 1.25rem/1.4 var(--sans); margin: 0 0 6px; }
 .fix ul { margin: 0; padding-left: 1.2em; max-width: 38em; }
 .fix li { margin-bottom: 6px; }
 .tag { font-weight: 700; color: var(--red); }
+.fix a.file { color: var(--green); font-weight: 700; }
+.fix small { display: block; font-size: .82rem; color: var(--muted); }
 code { font: .86em Consolas, "Courier New", monospace; background: #edf1ee; padding: .1em .35em; word-break: break-all; }
 
 table { width: 100%; border-collapse: collapse; }
@@ -133,7 +135,7 @@ footer p { margin: 0 0 8px; max-width: 46em; }
 <header class="hero">
   <div class="wrap">
     <h1>官網證書頁 14 個位置，<br>10 個要處理</h1>
-    <p>這是 2026/11/02 對<a href="https://www.df-recycle.com/certificate">官網「專業認證」頁</a>的逐張查核。5 個內容有誤，4 個過期或快到期，1 張含個資，只有 4 個完全不用動。點圖片可看大圖，點圖片下方的名稱可看處理方式。</p>
+    <p>這是 2026/11/02 對<a href="https://www.df-recycle.com/certificate">官網「專業認證」頁</a>的逐張查核。5 個內容有誤，4 個過期或快到期，1 張含個資，只有 4 個完全不用動。另外有 4 張新的循環標誌使用證書可以新增。點圖片可看大圖，點圖片下方的名稱可看處理方式。</p>
     <ol class="wall">
       <li><div class="tile ok"><a class="sheet zoom" href="img/large/iso9001.jpg" data-caption="ISO 9001:2015：正確"><img src="img/iso9001.jpg" alt="ISO 9001 證書"><span class="stamp green" style="--i:0">正確</span></a><a class="name" href="#ok">ISO 9001:2015</a></div></li>
       <li><div class="tile ok"><a class="sheet zoom" href="img/large/iso14001.jpg" data-caption="ISO 14001:2015：正確"><img src="img/iso14001.jpg" alt="ISO 14001 證書"><span class="stamp green" style="--i:1">正確</span></a><a class="name" href="#ok">ISO 14001:2015</a></div></li>
@@ -142,7 +144,7 @@ footer p { margin: 0 0 8px; max-width: 46em; }
       <li><div class="tile ok"><a class="sheet zoom" href="img/large/iso27001.jpg" data-caption="ISO 27001:2022：正確"><img src="img/iso27001.jpg" alt="ISO 27001 證書"><span class="stamp green" style="--i:4">正確</span></a><a class="name" href="#ok">ISO 27001:2022</a></div></li>
       <li><div class="tile"><a class="sheet zoom" href="img/large/permit-masked.jpg" data-caption="甲級廢棄物清除許可證：含個資"><img src="img/permit-masked.jpg" alt="甲級廢棄物清除許可證，個資已遮蔽"><span class="stamp red" style="--i:5">含個資</span></a><a class="name" href="#privacy">甲級廢棄物清除許可證</a></div></li>
       <li><div class="tile"><a class="sheet zoom" href="img/large/eucertplast.jpg" data-caption="FDA NOL 認證：放錯"><img src="img/eucertplast.jpg" alt="實際顯示的 EuCertPlast 證書"><span class="stamp red" style="--i:6">放錯</span></a><a class="name" href="#fix-nol">FDA NOL 認證</a></div></li>
-      <li><div class="tile"><a class="sheet zoom" href="img/large/grs.jpg" data-caption="GRS 全球回收標準：已過期"><img src="img/grs.jpg" alt="GRS 證書"><span class="stamp amber" style="--i:7">已過期</span></a><a class="name" href="#expiry">GRS 全球回收標準</a></div></li>
+      <li><div class="tile"><a class="sheet zoom" href="img/large/grs.jpg" data-caption="GRS 全球回收標準：官網圖已過期，要換新版"><img src="img/grs.jpg" alt="GRS 證書"><span class="stamp amber" style="--i:7">換新版</span></a><a class="name" href="#fix-grs">GRS 全球回收標準</a></div></li>
       <li><div class="tile"><a class="sheet zoom" href="img/large/tuv14067.jpg" data-caption="再生料減碳75%認證：無佐證"><img src="img/tuv14067.jpg" alt="實際顯示的 TÜV Rheinland ISO 14067 證書"><span class="stamp red" style="--i:8">無佐證</span></a><a class="name" href="#fix-carbon">再生料減碳75%認證</a></div></li>
       <li><div class="tile"><a class="sheet zoom" href="img/large/rohs.jpg" data-caption="RCS 回收含量標準：放錯"><img src="img/rohs.jpg" alt="實際顯示的 RoHS 測試報告"><span class="stamp red" style="--i:9">放錯</span></a><a class="name" href="#fix-rcs">RCS 回收含量標準</a></div></li>
       <li><div class="tile"><a class="sheet zoom" href="img/large/ares14067.jpg" data-caption="ISO 14067:2018（碳足跡區）：快到期"><img src="img/ares14067.jpg" alt="ARES ISO 14067 查證聲明"><span class="stamp amber" style="--i:10">快到期</span></a><a class="name" href="#expiry">ISO 14067:2018（碳足跡區）</a></div></li>
@@ -251,15 +253,51 @@ footer p { margin: 0 0 8px; max-width: 46em; }
 
   <section id="expiry">
     <h2>過期與快到期</h2>
-    <p class="lead">到期日以網站上的圖片為準。公司可能已經續證、只是網站沒更新，所以先確認手上有沒有新版：有新證就換，未續證就下架或標註。</p>
+    <p class="lead">到期日以網站上的圖片為準。GRS 已確認有新證書，其他項目請先確認手上有沒有新版：有新證就換，未續證就下架或標註。</p>
     <table>
       <thead><tr><th>文件</th><th>到期日</th><th>狀態</th><th class="hide-sm">怎麼改</th></tr></thead>
       <tbody>
-        <tr><td>GRS 全球回收標準<a class="file" href="https://dfrecyclecom-my.sharepoint.com/:f:/r/personal/marketing_df-recycle_com/Documents/%E8%A1%8C%E9%8A%B7%E9%83%A8%E9%9B%B2%E7%AB%AF%E8%B3%87%E6%96%99/%E5%BE%AA%E7%92%B0%E8%A1%8C%E9%8A%B7%E6%9C%8D%E5%8B%99/%E5%BE%AA%E7%92%B0%E6%A8%99%E8%AA%8C/GRS%E8%AD%89%E6%98%8E?d=wf62d9caab1ef4c988599191f32b1567d&amp;csf=1&amp;web=1&amp;e=Cm5Wfg" target="_blank" rel="noopener">開啟新版 GRS 證書資料夾</a><small>需用公司 Microsoft 365 帳號登入</small></td><td>2026/08/24</td><td class="state red">過期 70 天</td><td class="hide-sm">用資料夾裡的新版證書換掉官網現有的圖</td></tr>
+        <tr><td>GRS 全球回收標準<a class="file" href="https://dfrecyclecom-my.sharepoint.com/:f:/r/personal/marketing_df-recycle_com/Documents/%E8%A1%8C%E9%8A%B7%E9%83%A8%E9%9B%B2%E7%AB%AF%E8%B3%87%E6%96%99/%E5%BE%AA%E7%92%B0%E8%A1%8C%E9%8A%B7%E6%9C%8D%E5%8B%99/%E5%BE%AA%E7%92%B0%E6%A8%99%E8%AA%8C/GRS%E8%AD%89%E6%98%8E?d=wf62d9caab1ef4c988599191f32b1567d&amp;csf=1&amp;web=1&amp;e=Cm5Wfg" target="_blank" rel="noopener">開啟新版 GRS 證書資料夾</a><small>需用公司 Microsoft 365 帳號登入</small></td><td>2026/08/24</td><td class="state amber">要換新版</td><td class="hide-sm">新證書有效至 2027/08/24，見下方對照</td></tr>
         <tr><td>Sedex 高級供應商會員</td><td>2026/09</td><td class="state red">已過期</td><td class="hide-sm">有新證就換，未續證就下架或標註</td></tr>
         <tr><td>ISO 14067:2018（ARES，頁面出現兩次）</td><td>2026/12/25</td><td class="state amber">剩 53 天</td><td class="hide-sm">換證時兩處要一起更新</td></tr>
       </tbody>
     </table>
+
+    <article class="fix" id="fix-grs">
+      <div class="compare">
+        <figure><a class="zoom" href="img/large/grs.jpg"><img src="img/grs.jpg" alt="官網目前的 GRS 證書"></a><figcaption><b>現在顯示，要換掉</b>有效至 2026/08/24，已過期</figcaption></figure>
+        <figure><a class="zoom" href="img/large/grs-new.jpg"><img src="img/grs-new.jpg" alt="新版 GRS 證書"></a><figcaption><b>應改為，要留這份</b>有效至 2027/08/24</figcaption></figure>
+      </div>
+      <div>
+        <h3>GRS 全球回收標準</h3>
+        <p><span class="tag">狀態：</span>已續證。新證書編號 CU1024125GRS-2026-00088521，2026/08/25 發證，有效至 2027/08/24。官網只差換圖。</p>
+        <ul>
+          <li>換上新版證書，說明文字「GRS 全球回收標準」不用改。</li>
+          <li>新證書共 3 頁，官網放第 1 頁即可。</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <section id="add">
+    <h2>可以新增：循環標誌使用證書</h2>
+    <p class="lead">2026 年 10 月通過，共 4 張，官網目前都還沒有。這裡先放兩張，全部 4 張的檔案在下方資料夾。</p>
+    <article class="fix">
+      <div class="compare">
+        <figure><a class="zoom" href="img/large/cl-a000078.jpg"><img src="img/cl-a000078.jpg" alt="循環標誌使用證書 A000078，rPP循環再生布料單紗"></a><figcaption><b>A000078</b>rPP循環再生布料-單紗</figcaption></figure>
+        <figure><a class="zoom" href="img/large/cl-a000075.jpg"><img src="img/cl-a000075.jpg" alt="循環標誌使用證書 A000075，rPP循環再生布料複紗"></a><figcaption><b>A000075</b>rPP循環再生布料-複紗</figcaption></figure>
+      </div>
+      <div>
+        <h3>環境部循環標誌使用證書</h3>
+        <p>這兩張的有效期限都是 2026/10/15 至 2029/10/14。其餘兩張請以資料夾內的證書為準。</p>
+        <p><a class="file" href="https://dfrecyclecom-my.sharepoint.com/:f:/r/personal/marketing_df-recycle_com/Documents/%E8%A1%8C%E9%8A%B7%E9%83%A8%E9%9B%B2%E7%AB%AF%E8%B3%87%E6%96%99/%E5%BE%AA%E7%92%B0%E8%A1%8C%E9%8A%B7%E6%9C%8D%E5%8B%99/%E5%BE%AA%E7%92%B0%E6%A8%99%E8%AA%8C/%E8%AD%89%E6%9B%B8?d=we017dfdf5def4c19a1eb70cc2a8a4e9f&amp;csf=1&amp;web=1&amp;e=mMDQjV" target="_blank" rel="noopener">開啟循環標誌證書資料夾</a><small>需用公司 Microsoft 365 帳號登入</small></p>
+        <ul>
+          <li>建議放在官網「其他認證」區，一張證書一個位置。</li>
+          <li>證書是核發給個別產品，不是整間公司。說明文字請寫出產品名稱，例如「循環標誌使用證書：rPP循環再生布料-單紗」。</li>
+          <li>11/4 有循環標誌授證儀式，要一起宣傳的話，建議在儀式前上架。</li>
+        </ul>
+      </div>
+    </article>
   </section>
 
   <section id="ok">
